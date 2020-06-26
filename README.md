@@ -1,7 +1,5 @@
 ## Injector
 
-Simple dependency injection library.
-
 **Usage example:**
 
 For example we need to inject a service into a repository.
