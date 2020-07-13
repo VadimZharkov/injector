@@ -2,26 +2,26 @@
 
 **Usage example:**
 
-For example we need to inject a service into a repository.
+For example we need to inject a repository into a service.
 ```java
-class Repository {
+class Service {
     @Inject
-    Service service;
+    Repository repository;
 }
 ```   
 
 First we define the provider class.
 ```java
-class ServiceProvider {
+class RepositoryProvider {
     @Provide
-    Service provideService() {
-        return new Service();
+    Repository provideRepository() {
+        return new Repository();
     }
 }
 ```  
 
-Then register it in the injector and create an instance of the repository.
+Then register it in the injector and create an instance of the service.
 ```java
-Injector injector = Injector.of(ServiceProvider.class);
-Repository repository = injector.getInstance(Repository.class);
+Injector injector = Injector.of(RepositoryProvider.class);
+Service service = injector.getInstance(Service.class);
 ```  
